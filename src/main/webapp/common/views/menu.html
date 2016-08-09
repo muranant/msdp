@@ -1,0 +1,21 @@
+<div class="container-fluid" ng-class="isExpanded == true ? 'col-md-2' : 'col-md-1'" >
+
+    <div class="well flat">
+
+
+        <uib-tabset data-ng-show="isExpanded" vertical="true" type="pills" class="flat light no-border" >
+            <uib-tab active="activeTabs['dashboard']" ng-click="notifyTabChange('dashboard')">
+                <uib-tab-heading>
+                    <i class="glyphicon glyphicon-dashboard">&nbsp;</i>Dashboard
+                </uib-tab-heading>
+
+            </uib-tab>
+            <uib-tab active="activeTabs['accountInfo']" ng-click="notifyTabChange('accountInfo')">
+                <uib-tab-heading class="text-left">
+                    <i class="glyphicon glyphicon-cloud">&nbsp;</i>Accounts
+                </uib-tab-heading>
+
+            </uib-tab>
+        </uib-tabset>
+    </div>
+</div>

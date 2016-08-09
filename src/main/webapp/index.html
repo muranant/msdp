@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>MicroServices Application Title </title>
+    <link rel=icon href=common/images/favicon.ico sizes="32x32" type="image/png">
+
+    <!----- DO NOT CHANGE THE ORDER ----->
+
+    <!----------- Bootstrap & CSS --------------->
+
+    <link rel="stylesheet" href="lib/angular-chart.js/dist/angular-chart.css" />
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href='lib/angular-loading-bar/build/loading-bar.min.css' type='text/css' media='all' />
+    <link rel="stylesheet" type="text/css" href="lib/angular-toastr/dist/angular-toastr.css" />
+    <link rel="stylesheet" href="styles/app.css" />
+
+    <!--------- Thirdparty --------->
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.min.js"></script>
+    <script src="lib/Chart.js/Chart.min.js"></script>
+    <script src="lib/angular-chart.js/angular-chart.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-cookies/angular-cookies.js"></script>
+    <script src="lib/angular-strap/dist/angular-strap.min.js"></script>
+    <script src="lib/angular-resource/angular-resource.min.js"></script>
+    <script src="lib/angular-loading-bar/build/loading-bar.min.js"></script>
+    <script src="lib/angular-sanitize/angular-sanitize.min.js" ></script>
+    <script src="lib/angular-file-saver/dist/angular-file-saver.bundle.js"></script>
+    <script src="lib/angular-toastr/dist/angular-toastr.tpls.js"></script>
+
+
+    <script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+    <!--------- Init --------->
+    <script src="modules/app.js"></script>
+
+    <script src="auth/loginController.js"></script>
+    <script src="controllers/navbarController.js"></script>
+    <script src="controllers/menuController.js"></script>
+    <script src="controllers/progressController.js"></script>
+    <script src="controllers/aboutController.js"></script>
+    <script src="common/directives/searchBarDirective.js"></script>
+    <script src="common/directives/paginatorDirective.js"></script>
+
+    <!-------- Application Specific Controllers -->
+    <script src="application/dashboardController.js"></script>
+    <script src="application/accounts/accountSummaryController.js"></script>
+    <script src="application/accounts/addAccountController.js"></script>
+    <script src="application/instanceController.js"></script>
+    <script src="application/volumeController.js"></script>
+    <script src="application/snaphotController.js"></script>
+
+    <!--------- Services --------->
+    <script src="utils/RestUtils.js"></script>
+    <script src="services/SharedDataFactory.js"></script>
+    <script src="services/ServiceFactory.js"></script>
+    <script src="services/RestService.js"></script>
+    <script src="services/NotificationService.js"></script>
+    <script src="auth/AuthService.js"></script>
+    <script src="services/Constants.js"></script>
+    <script src="services/NavigatorService.js"></script>
+    <script src="services/GlobalSettings.js"></script>
+
+
+</head>
+
+<body class="set-scale" ng-app="app-ui" ng-controller="loginController" ng-init="initSession()" ng-click="checkSessionValid()">
+
+<!-- If not authorized, show login form -->
+<div class="container-fluid" >
+    <div ng-if="!isAdminLoggedIn" ng-include="'auth/login.html'"></div>
+</div>
+
+
+
+<!-- If authorized, show app -->
+<div ng-if="isAdminLoggedIn" ng-controller="navbarController" ng-include="'common/views/navbar.html'"></div>
+<div ng-if="isAdminLoggedIn" class="container-fluid" style="border-radius: 0px">
+    <div ng-controller="menuController" ng-include="'common/views/menu.html'"></div>
+    <div ng-view class="container-fluid" ng-class="isExpanded == true ? 'col-md-10' : 'col-md-11'"></div>
+</div>
+
+</body>
+</html>

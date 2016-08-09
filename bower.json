@@ -1,0 +1,28 @@
+{
+  "name": "app-ui",
+  "description": "App UI",
+  "main": "modules/app.js",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.0.3",
+    "angular-bootstrap": "~1.1.2",
+    "angular-route": "~1.4.7",
+    "angular-animate": "~1.4.7",
+    "angular-cookies": "~1.4.7",
+    "angular-strap": "~0.7.2",
+    "angular-resource": "~1.4.7",
+    "angular-chart.js": "~0.8.5",
+    "angular-loading-bar": "~0.8.0",
+    "angular-file-saver": "~1.0.1",
+    "angular-toastr": "~1.7.0",
+    "angular-sanitize": "~1.4.9"
+  }
+}

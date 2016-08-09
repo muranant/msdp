@@ -1,0 +1,116 @@
+.popover {
+    text-align: center;
+    max-width: 400px;
+}
+
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+.btn-file input[type=file] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    font-size: 100px;
+    text-align: right;
+    filter: alpha(opacity=0);
+    opacity: 0;
+    outline: none;
+    background: white;
+    cursor: inherit;
+    display: block;
+}
+
+.btn-login {
+
+    background-color: rgb(20, 135, 207);
+}
+
+.flat,
+.modal-content,
+.img-thumbnail,
+.table-bordered,
+.table-bordered tr:first-child th:first-child,
+.table-bordered tr:first-child th:last-child,
+.table-bordered tr:last-child td:first-child,
+.table-bordered tr:last-child td:last-child,
+.input-group .dropdown-menu,
+.input-group .form-control,
+.input-group .input-group-addon,
+.dropdown-menu,
+.dropdown-menu .dropdown-submenu .dropdown-menu,
+.form .form-control,
+.form-control,
+.label,
+.alert,
+.select,
+.progress,
+.breadcrumb,
+.tooltip .tooltip-inner,
+.nav-list-panel,
+.nav-tabs li > a,
+.tabs-below .nav-tabs li > a,
+.tabs-right .nav-tabs li > a,
+.tabs-left .nav-tabs li > a,
+.nav-tabs .dropdown-menu,
+.tabs-below .nav-tabs .dropdown-menu,
+.nav-pills li a,
+.nav-pills .dropdown-menu,
+.navbar,
+.navbar .dropdown-menu,
+.pagination,
+.pagination li:first-child a,
+.pagination li:first-child span,
+.pagination li:last-child a,
+.pagination li:last-child span,
+.pager li a,
+.pager li a:hover,
+.pager li a:focus,
+.panel,
+.panel-group .panel,
+.panel-group .panel-heading,
+.panel-group .panel-body
+{
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.light {
+    font-weight: lighter;
+}
+
+.normal {
+    font-weight: normal;
+}
+
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+.set-scale{
+
+    zoom : 1
+}
+.collapsed-menu {
+    top: 10px !important;
+    left: 40px !important;
+}
+.expanded-menu {
+    top: 0px !important;
+    left: 80px !important;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+    margin-top: 0;
+}
+
+.btn-invisible{
+    border:0px; /* this was 1px earlier */
+}
+
+.btn:focus {
+    outline: none;
+}

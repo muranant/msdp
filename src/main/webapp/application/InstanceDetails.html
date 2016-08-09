@@ -1,0 +1,58 @@
+<div class="well well-lg display-well" style="border-radius: 0">
+
+
+    <div class="panel panel-info flat">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+            <h4><a href="#/dashboard"><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span></a>
+                &nbsp;&nbsp;<span class="glyphicon glyphicon-tasks">&nbsp;</span>Instance Details for {{accountId}}
+                <div class="col-sm-3 col-md-3 pull-right">
+                    <search-bar />
+                </div>
+            </h4>
+        </div>
+
+
+        <div class="panel-body" >
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th ng-click="orderByField='name'; reverseSort = !reverseSort">
+                        Name <span ng-show="orderByField == 'name'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                    </th>
+                    <th ng-click="orderByField='time'; reverseSort = !reverseSort">
+                        Launch Time <span ng-show="orderByField == 'time'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                    </th>
+                    <th ng-click="orderByField='resourceId'; reverseSort = !reverseSort">
+                        ID <span ng-show="orderByField == 'resourceId'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                    </th>
+                    <th ng-click="orderByField='upTime'; reverseSort = !reverseSort">
+                        Uptime <span ng-show="orderByField == 'upTime'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                    </th>
+                    <th ng-click="orderByField='status'; reverseSort = !reverseSort">
+                        Status <span ng-show="orderByField == 'status'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                    </th>
+                </tr>
+                </thead>
+
+                <tbody>
+                <tr ng-repeat="instance in instances | filter:nameText | orderBy:orderByField:reverseSort ">
+
+                    <td>{{instance.name}}</td>
+                    <td>{{instance.time}}</td>
+                    <td>{{instance.id}}</td>
+                    <td>{{instance.upTime}}</td>
+                    <td>{{instance.status}}</td>
+                </tr>
+                </tbody>
+
+            </table>
+
+            <paginator data="instances" items-per-page=5 />
+
+        </div>
+    </div>
+</div>
+
+
+<div class="clearfix visible-lg"></div>

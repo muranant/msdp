@@ -1,0 +1,7 @@
+<legend></legend>
+<div class="row">
+    <label>&nbsp;Items Per Page :&nbsp</label><input type="number" data-ng-model="itemsPerPage" data-ng-change="currentPage=1; pageChanged();"/>
+</div>
+<div class="row">
+    <uib-pagination class="pagination-sm" ng-change="pageChanged()" total-items="originalData.length" ng-model="currentPage" items-per-page="itemsPerPage"></uib-pagination>
+</div>

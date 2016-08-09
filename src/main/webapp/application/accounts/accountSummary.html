@@ -1,0 +1,72 @@
+<div class="well well-lg display-well" style="border-radius: 0px">
+
+
+    <div class="panel panel-info flat">
+        <!-- Default panel contents -->
+        <div class="panel-heading">
+
+            <h4 class="light">
+                <span class="glyphicon glyphicon-cloud"></span>&nbsp;&nbsp;Accounts&nbsp;&nbsp;&nbsp;
+
+                <button class="btn btn-primary" id="create-account" ng-click="addAccount()">
+                    <span class="glyphicon glyphicon-plus"></span> <span class="glyphicon glyphicon-cloud"></span>
+                </button>
+
+                <button class="btn btn-success" id="refresh-account" ng-click="getAccountInfo()">
+                    <span class="glyphicon glyphicon-refresh"></span>
+                </button>
+
+                <div class="col-sm-3 col-md-3 pull-right">
+                    <search-bar />
+                </div>
+            </h4>
+        </div>
+
+
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th ng-click="orderByField='accountName'; reverseSort = !reverseSort">
+                    Account Name <span ng-show="orderByField == 'accountName'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                </th>
+                <th ng-click="orderByField='type'; reverseSort = !reverseSort">
+                    Cloud <span ng-show="orderByField == 'type'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                </th>
+                <th ng-click="orderByField='id'; reverseSort = !reverseSort">
+                    Id <span ng-show="orderByField == 'id'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                </th>
+                <th ng-click="orderByField='key'; reverseSort = !reverseSort">
+                    Key <span ng-show="orderByField == 'key'"><span ng-show="!reverseSort" class="glyphicon glyphicon-chevron-up"></span><span ng-show="reverseSort" class="glyphicon glyphicon-chevron-down"></span></span>
+                </th>
+                <th>
+                    Edit &nbsp;| Delete
+                </th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="account in accountInfo |  orderBy:orderByField:reverseSort ">
+                <td>{{account.accountName}}</td>
+                <td>{{account.type}}</td>
+                <td>{{account.id}}</td>
+                <td>{{account.key}}</td>
+                <td>
+                    <div class="btn-group">
+                        <button class="btn" ng-click="updateAccount(name)">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </button>
+                        <button class="btn btn-danger" ng-click="deleteAccount(name)">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+</div>
+
+<div class="clearfix visible-lg"></div>
+

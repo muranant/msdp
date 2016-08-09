@@ -1,0 +1,26 @@
+<div class="container-fluid" style="border-radius: 0px">
+
+    <nav class="nav flat">
+        <div class="navbar-header">
+            <a id="logo" href="#/dashboard" data-ng-click="goto('dashboard')">
+                <div class="navbar-brand">
+                    <img height="50" width="50" src="common/images/login_logo.jpeg">
+                </div>
+            </a>
+        </div>
+
+        <div class="navbar-brand">
+            <a href="#/dashboard" data-ng-click="goto('dashboard')" style="text-decoration: none;"><h1 style="font-weight: lighter; font-size: 30px">&nbsp;&nbsp;Micro Services Application Demo </h1></a>
+        </div>
+
+
+        <ul class="nav navbar-nav navbar-right">
+            <li><a class="btn flat" data-ng-click="adminLogin()">Admin</a></li>
+            <li><a class="btn flat" data-ng-click="logOutSession()">Log out</a></li>
+            <li><a data-ng-click="doAboutQuery()" class="btn flat">About</a></li>
+            <li><a class="btn flat" target="_blank">Support&nbsp;&nbsp;&nbsp;&nbsp;</a></li>
+
+        </ul>
+    </nav>
+
+</div>

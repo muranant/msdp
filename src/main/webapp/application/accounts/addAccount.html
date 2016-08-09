@@ -1,0 +1,54 @@
+<div class="modal-header">
+    <h3 class="modal-title light">Add New Account</h3>
+</div>
+
+<div class="modal-body light">
+    <form name="addAccountForm" id="addAccountForm" ng-submit="submitForm()">
+
+        <div class="panel panel-success flat">
+            <!-- Default panel contents -->
+            <div class="panel-heading"><h4 class="light">Account Information</h4>
+            </div>
+            <div class="panel-body">
+
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        <label for="accountName">Account Name</label>
+                        <input required name="accountName" ng-model="accountInfo.accountName" type="string" class="form-control" id="accountName" placeholder="Enter Account Name">
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        <label for="type">Select Cloud</label>
+                        <select required name="type" ng-model="accountInfo.type" class="form-control" id="type">
+                            <option value="">Please select</option>
+                            <option>Amazon</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <fieldset class="form-group">
+                    <div class="form-group">
+                        <label for="id">Account Id</label>
+                        <input required type="string" name="id" ng-model="accountInfo.id" class="form-control" id="id" placeholder="Enter Id for the Account">
+                    </div>
+                    <div class="form-group">
+                        <label for="id">Account Key</label>
+                        <input required type="string" name="key" ng-model="accountInfo.key" class="form-control" id="key" placeholder="Enter key for the Account">
+                    </div>
+                </fieldset>
+
+            </div>
+        </div>
+
+        <legend></legend>
+    </form>
+</div>
+
+<div class="modal-footer light">
+    <button id="add-account-btn" form="addAccountForm" type="submit" class="btn btn-primary flat">Add</button>
+    <button type="reset"  data-ng-click="resetForm()" class="btn btn-default flat">Reset</button>
+    <button type="button" data-ng-click="cancelForm()" class="btn btn-warning flat">Cancel</button>
+</div>
